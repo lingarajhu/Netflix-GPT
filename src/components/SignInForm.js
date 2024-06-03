@@ -16,7 +16,7 @@ const SignInForm = (props) => {
           <Form>
             {!props.logInForm && (
               <Form.Group id="full-name">
-                <Form.Control type="text" required placeholder="Full name" />
+                <Form.Control type="text" required placeholder="Full Name" />
               </Form.Group>
             )}
             <Form.Group id="email">
@@ -24,11 +24,11 @@ const SignInForm = (props) => {
                 className="bg-gray-600 my-4"
                 type="email"
                 required
-                placeholder="Email"
+                placeholder="Email Address"
               />
             </Form.Group>
             <Form.Group id="password">
-              <Form.Control type="password" required placeholder="password" />
+              <Form.Control type="password" required placeholder="Password" />
             </Form.Group>
             <button
               className="w-100 my-4 mb-1 p-2 bg-red-600 rounded-md"
