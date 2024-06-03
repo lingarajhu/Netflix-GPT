@@ -2,8 +2,11 @@
 
 - Create React App
 - Configures tailwindCSS
+<<<<<<< HEAD
 - SignIn/SignUp Form
 - Header / LogIn Component
+=======
+>>>>>>> b70292b42852c036c8dfe99dad191a066bb27451
 
 # Features
 
