@@ -1,13 +1,33 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+import { addUser, removeUser } from "../utils/userSlice";
+import { USER_LOGO } from "../utils/constants";
 
 const Header = (props) => {
   const user = useSelector((store) => store.user);
   const navigate = useNavigate();
   const [showSignOut, setShowSignOut] = useState(true);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName } = user;
+        //User is signed in
+        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+        navigate("/Browser");
+      } else {
+        // User is signed out
+        dispatch(removeUser());
+        navigate("/");
+      }
+
+      return () => unsubscribe();
+    });
+  }, []);
 
   const handleClick = () => {
     setShowSignOut(!showSignOut);
@@ -15,22 +35,16 @@ const Header = (props) => {
 
   const handleSignOut = () => {
     signOut(auth)
-      .then(() => {
-        navigate("/");
-      })
+      .then(() => {})
       .catch((error) => {
         navigate("/error");
       });
   };
 
   return (
-    <div className="w-full absolute flex items-center justify-between bg-gradient-to-b from-black p-7 px-24">
+    <div className="fixed w-full z-50 flex items-center justify-between bg-gradient-to-b from-black py-2 px-7">
       <div>
-        <img
-          className="w-40 bg-opacity-0"
-          src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-          alt="logo-img"
-        />
+        <img className="w-40 bg-opacity-0" src={USER_LOGO} alt="logo-img" />
       </div>
       <div className="flex gap-7">
         <select
@@ -48,7 +62,7 @@ const Header = (props) => {
         {user && (
           <div className="relative flex items-center font-bold text-3xl">
             <img
-              className="w-9 h-9 mr-3 rounded-md"
+              className="w-8 h-8 mr-3 rounded-md"
               src="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg"
               alt="user-icon"
             />

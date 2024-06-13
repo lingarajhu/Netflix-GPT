@@ -15,6 +15,15 @@
 - Created redux Store with userSlice
 - Implemented Sign Out
 - Updated profile
+- BugFix: SignUp user displayName and profile pitcure
+- BugFix: If the user is not logged in do not navigate it to /browser vise versa
+- Unsubscribe the onAuthStateChanged when the component will unmount
+- Add hardcoaded values to the constants file
+- Created coustome hooks for fetching the movie title and discription and for fetching the trailer of the video
+- Created the new slice for storing the movie data
+- Created the Main movie container component and updated the css
+- Embeded the youtube video and make it autoplay and mute
+-
 
 # Features
 
