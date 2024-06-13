@@ -7,7 +7,7 @@ const MainMovieContainer = () => {
   const moviesData = useSelector((store) => store.movieData?.nowMoviePlaying);
   if (!moviesData) return;
 
-  const firstPlayingMovie = moviesData[3];
+  const firstPlayingMovie = moviesData[0];
   if (!firstPlayingMovie) return;
 
   // console.log(firstPlayingMovie);

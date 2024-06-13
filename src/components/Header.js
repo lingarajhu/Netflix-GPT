@@ -73,7 +73,7 @@ const Header = (props) => {
               {showSignOut ? "🔻" : "🔺"}
             </span>
             {!showSignOut && (
-              <div className="bg-zinc-600 origin-top duration-200 bg-opacity-30 flex flex-col p-2 absolute left-10 top-8 w-24 text-center rounded-md">
+              <div className="bg-gray-600 origin-top duration-200 bg-opacity-60 flex flex-col p-2 absolute left-4 top-8 w-24 text-center rounded-md">
                 <span className="font-bold hover:shadow-xl duration-200 text-base text-white">
                   {user.displayName}
                 </span>

@@ -5,7 +5,7 @@ import { setTrailerId } from "../utils/movieSlice";
 
 const usePlayVideoBackground = (movieId) => {
   const dispatch = useDispatch();
-  console.log(movieId);
+  // console.log(movieId);
 
   useEffect(() => {
     fetchVideoData();
@@ -23,7 +23,6 @@ const usePlayVideoBackground = (movieId) => {
     const trailer = filterTrailers.length
       ? filterTrailers[0]
       : json?.results[0];
-    console.log(trailer);
     dispatch(setTrailerId(trailer?.key));
   };
 };
