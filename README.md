@@ -27,7 +27,7 @@
 - Added popular, upcoming, toprated, now streaming movielists fetched the data for each and updated the slice by creating the reducer function for each movie lists
 - Created the movie card and added the add button to card div
 - Created the watch list section upon clicking the add button in the card section till will update the watchList and also updated the same data to store
--
+- Created the coustome hooks for fetching the data for different categories of movies
 
 # Features
 
