@@ -5,7 +5,6 @@ import { setTrailerId } from "../utils/movieSlice";
 
 const usePlayVideoBackground = (movieId) => {
   const dispatch = useDispatch();
-  // console.log(movieId);
 
   useEffect(() => {
     fetchVideoData();

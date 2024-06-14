@@ -13,7 +13,8 @@ const BackgroundVideoPlay = ({ movieId }) => {
         src={
           "https://www.youtube-nocookie.com/embed/" +
           trailerId +
-          "?autoplay=1&mute=1"
+          "?loop=1&autoplay=1&mute=1&playlist=" +
+          trailerId
         }
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

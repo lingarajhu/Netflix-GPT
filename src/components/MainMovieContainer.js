@@ -7,12 +7,11 @@ const MainMovieContainer = () => {
   const moviesData = useSelector((store) => store.movieData?.nowMoviePlaying);
   if (!moviesData) return;
 
-  const firstPlayingMovie = moviesData[0];
+  const firstPlayingMovie = moviesData[1];
   if (!firstPlayingMovie) return;
 
-  // console.log(firstPlayingMovie);
-
   const { original_title, overview, id } = firstPlayingMovie;
+  console.log(id);
 
   return (
     <div className="relative">

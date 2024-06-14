@@ -23,6 +23,10 @@
 - Created the new slice for storing the movie data
 - Created the Main movie container component and updated the css
 - Embeded the youtube video and make it autoplay and mute
+- Created Secondary Container which stores the all the movie lists
+- Added popular, upcoming, toprated, now streaming movielists fetched the data for each and updated the slice by creating the reducer function for each movie lists
+- Created the movie card and added the add button to card div
+- Created the watch list section upon clicking the add button in the card section till will update the watchList and also updated the same data to store
 -
 
 # Features
