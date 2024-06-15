@@ -1,22 +1,22 @@
 import { useEffect } from "react";
 import { options } from "../utils/constants";
 import { useDispatch } from "react-redux";
-import { addPopular } from "../utils/movieSlice";
+import { addTVShows } from "../utils/movieSlice";
 
-const usePopularMovies = () => {
+const useTVShows = () => {
   const dispatch = useDispatch();
-  const fetchPopularMoviesData = async () => {
+  const fetchTVShowData = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/movie/popular",
+      "https://api.themoviedb.org/3/trending/tv/week",
       options
     );
     const json = await data.json();
-    dispatch(addPopular(json?.results));
+    dispatch(addTVShows(json?.results));
   };
 
   useEffect(() => {
-    fetchPopularMoviesData();
+    fetchTVShowData();
   }, []);
 };
 
-export default usePopularMovies;
+export default useTVShows;

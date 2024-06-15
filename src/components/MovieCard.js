@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { IMG_POSTER_CDN } from "../utils/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch } from "react-redux";
-import { addWatchList } from "../utils/movieSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addWatchList, setIsWatchList } from "../utils/movieSlice";
 
 const MovieCard = ({ poster_path, title, imdbRating, currentMovie }) => {
   const [showCardName, setShowCardName] = useState(false);
   const [watchList, setWatchList] = useState(false);
+  const checkWatchList = useSelector((store) => store?.movieData?.watchList);
 
   const dispatch = useDispatch();
 
@@ -17,18 +18,23 @@ const MovieCard = ({ poster_path, title, imdbRating, currentMovie }) => {
   const handleEnter = () => {
     setShowCardName(true);
   };
-  const handleEnterV2 = () => {
+
+  const handleLeave = () => {
     setShowCardName(false);
   };
+
   const handleClick = () => {
-    dispatch(addWatchList(currentMovie));
     setWatchList(true);
+    if (!checkWatchList.includes(currentMovie)) {
+      dispatch(addWatchList(currentMovie));
+    }
+    dispatch(setIsWatchList(true));
   };
 
   return (
     <div
-      onMouseLeave={handleEnterV2}
-      className="bg-transparent relative rounded-md w-[300px] hover:scale-110 transition ease-in-out duration-300"
+      onMouseLeave={handleLeave}
+      className="bg-transparent  relative rounded-md w-[200px] hover:scale-110 transition ease-in-out duration-300"
     >
       <img
         alt="Movie Poster"
@@ -37,7 +43,7 @@ const MovieCard = ({ poster_path, title, imdbRating, currentMovie }) => {
         onMouseEnter={handleEnter}
       />
       {showCardName && (
-        <div className="w-full absolute bottom-0 px-3 pb-2 bg-gradient-to-t from-black rounded-md">
+        <div className="w-full absolute bottom-0 px-3 pb-3 bg-gradient-to-t from-black rounded-md">
           <div className="flex justify-between items-center -mb-3">
             <p className="w-8/12 text-white text-lg font-bold transition duration-200">
               {title}
@@ -49,7 +55,9 @@ const MovieCard = ({ poster_path, title, imdbRating, currentMovie }) => {
               {!watchList ? addIcon : checkIcon}
             </button>
           </div>
-          <span className="text-white font-bold text-sm">{imdbRating}</span>
+          <span className="text-white font-bold text-sm">
+            {imdbRating.toFixed(1)}
+          </span>
           <span className="font-extrabold text-amber-500"> IMDb</span>
         </div>
       )}

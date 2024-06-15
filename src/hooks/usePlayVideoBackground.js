@@ -8,7 +8,7 @@ const usePlayVideoBackground = (movieId) => {
 
   useEffect(() => {
     fetchVideoData();
-  }, []);
+  }, [movieId]);
 
   const fetchVideoData = async () => {
     const videoData = await fetch(
@@ -19,9 +19,11 @@ const usePlayVideoBackground = (movieId) => {
     const filterTrailers = json?.results?.filter(
       (list) => list.type === "Trailer"
     );
+    console.log(filterTrailers);
     const trailer = filterTrailers.length
       ? filterTrailers[0]
       : json?.results[0];
+    // console.log(trailer);
     dispatch(setTrailerId(trailer?.key));
   };
 };

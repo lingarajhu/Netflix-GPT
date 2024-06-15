@@ -28,6 +28,10 @@
 - Created the movie card and added the add button to card div
 - Created the watch list section upon clicking the add button in the card section till will update the watchList and also updated the same data to store
 - Created the coustome hooks for fetching the data for different categories of movies
+- Changed the movie list image type
+- Created the new reducer function to play which ever movie trailer that user wish
+- Created the new component for List of Trailers
+- Updated the css and made lots of changes in store
 
 # Features
 

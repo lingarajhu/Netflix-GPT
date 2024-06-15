@@ -11,7 +11,6 @@ const useUpComingMovies = () => {
       options
     );
     const json = await data.json();
-    console.log(json);
     dispatch(addUpComing(json?.results));
   };
 
