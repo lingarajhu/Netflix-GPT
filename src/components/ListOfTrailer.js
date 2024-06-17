@@ -10,8 +10,8 @@ const ListOfTrailer = ({ movieList }) => {
   };
 
   return (
-    <div className="w-5/12 overflow-x-auto">
-      <div className="text-white rounded-md w-fit flex flex-row ml-[50%] gap-1 overflow-x-auto scrollbar-hide h-[15%] z-50 absolute bottom-28 bg-transparent">
+    <div className="overflow-x-auto rounded-md">
+      <div className="text-white w-[40%] pl-9 grid grid-flow-col rounded-md gap-1 overflow-y-auto scrollbar-hide h-[15%] z-50 absolute bottom-24 left-[60%] bg-transparent">
         {movieList.map((movie) => (
           <div
             onClick={() => handleClick(movie)}

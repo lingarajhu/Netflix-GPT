@@ -19,7 +19,6 @@ const usePlayVideoBackground = (movieId) => {
     const filterTrailers = json?.results?.filter(
       (list) => list.type === "Trailer"
     );
-    console.log(filterTrailers);
     const trailer = filterTrailers.length
       ? filterTrailers[0]
       : json?.results[0];

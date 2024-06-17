@@ -8,6 +8,7 @@ const movieSlice = createSlice({
     nowMoviePlaying: [],
     trailerId: null,
     isWatchList: false,
+    cardName: false,
     popular: [],
     topRated: [],
     upComing: [],
@@ -65,4 +66,5 @@ export const {
   nowFeaturingMovie,
   addFetureClickedMovie,
 } = movieSlice.actions;
+
 export default movieSlice.reducer;

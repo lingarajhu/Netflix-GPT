@@ -28,9 +28,9 @@ const MainMovieContainer = () => {
   return (
     featuringMovie.length !== 0 && (
       <div className="relative">
-        <ListOfTrailer movieList={moviesData} />
         <VideoTitle title={original_title} overview={overview} />
         <BackgroundVideoPlay movieId={id} />
+        <ListOfTrailer movieList={moviesData} />
       </div>
     )
   );

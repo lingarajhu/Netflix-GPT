@@ -6,7 +6,7 @@ const VideoTitle = ({ title, overview }) => {
   const playIcon = <FontAwesomeIcon icon={faPlay} />;
   const moreInfoIcon = <FontAwesomeIcon icon={faCircleInfo} />;
   return (
-    <div className="pt-80 px-10 w-screen aspect-video absolute bg-gradient-to-r from-black">
+    <div className="pt-72 px-10 w-screen aspect-video absolute bg-gradient-to-r from-black">
       <h2 className="font-bold text-white w-5/12 text-5xl">{title}</h2>
       <p className="py-2 text-lg w-6/12 text-gray-400">{overview}</p>
       <div>

@@ -34,13 +34,13 @@ const MovieCard = ({ poster_path, title, imdbRating, currentMovie }) => {
   return (
     <div
       onMouseLeave={handleLeave}
+      onMouseEnter={handleEnter}
       className="bg-transparent  relative rounded-md w-[200px] hover:scale-110 transition ease-in-out duration-300"
     >
       <img
         alt="Movie Poster"
         className="rounded-md"
         src={IMG_POSTER_CDN + poster_path}
-        onMouseEnter={handleEnter}
       />
       {showCardName && (
         <div className="w-full absolute bottom-0 px-3 pb-3 bg-gradient-to-t from-black rounded-md">

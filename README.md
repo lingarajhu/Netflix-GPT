@@ -32,6 +32,9 @@
 - Created the new reducer function to play which ever movie trailer that user wish
 - Created the new component for List of Trailers
 - Updated the css and made lots of changes in store
+- Created the GPT search page
+- Created search bar and search section in gpt search page
+- Created multi-language feature in our app
 
 # Features
 

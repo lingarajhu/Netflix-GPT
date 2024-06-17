@@ -5,9 +5,13 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { addUser, removeUser } from "../utils/userSlice";
 import { USER_LOGO } from "../utils/constants";
+import { openSearchComponent } from "../utils/gptSlice";
+import { SUPPORTED_LANGUAGES } from "../utils/constants";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = (props) => {
   const user = useSelector((store) => store.user);
+  const gptSearchButton = useSelector((store) => store.gptData.searchComponent);
   const navigate = useNavigate();
   const [showSignOut, setShowSignOut] = useState(true);
   const dispatch = useDispatch();
@@ -29,6 +33,10 @@ const Header = (props) => {
     });
   }, []);
 
+  const handleSearchBtn = () => {
+    dispatch(openSearchComponent(!gptSearchButton));
+  };
+
   const handleClick = () => {
     setShowSignOut(!showSignOut);
   };
@@ -41,34 +49,50 @@ const Header = (props) => {
       });
   };
 
+  const handleLanguageChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
+  };
+
   return (
-    <div className="fixed w-full z-50 flex items-center justify-between bg-gradient-to-b from-black py-2 px-7">
+    <div className="fixed w-full z-[51] flex items-center justify-between bg-gradient-to-b from-black py-2 px-7">
       <div>
         <img className="w-40 bg-opacity-0" src={USER_LOGO} alt="logo-img" />
       </div>
       <div className="flex gap-7">
-        <select
-          className="p-1 bg-transparent text-white text-lg w-24 border rounded-md"
-          name="lang"
-          id="lang"
-        >
-          <option className="text-black" value={"English"}>
-            English
-          </option>
-          <option className="text-black" value={"हिन्दी"}>
-            हिन्दी
-          </option>
-        </select>
+        {gptSearchButton && (
+          <select
+            className="p-1 bg-transparent text-white text-lg w-24 border rounded-md"
+            name="lang"
+            id="lang"
+            onChange={handleLanguageChange}
+          >
+            {SUPPORTED_LANGUAGES.map((lang) => (
+              <option
+                className="text-black"
+                key={lang.identifier}
+                value={lang.identifier}
+              >
+                {lang.name}
+              </option>
+            ))}
+          </select>
+        )}
         {user && (
           <div className="relative flex items-center font-bold text-3xl">
+            <button
+              onClick={handleSearchBtn}
+              className="bg-[#D9232E] rounded-md text-white text-base px-3 py-1"
+            >
+              {!gptSearchButton ? "GPT Search" : "Home"}
+            </button>
             <img
-              className="w-8 h-8 mr-3 rounded-md"
+              className="w-8 h-8 mx-3 rounded-md"
               src="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg"
               alt="user-icon"
             />
             <span
               onClick={handleClick}
-              className="mr-2 cursor-pointer transition ease-in-out duration-200"
+              className="cursor-pointer transition ease-in-out duration-200"
             >
               {showSignOut ? "🔻" : "🔺"}
             </span>
