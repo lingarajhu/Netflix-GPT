@@ -8,8 +8,7 @@ export const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiOTk2MmU1YzdmZDI2ZTkyYWZiY2I0YTYzNmNjOTBhZSIsInN1YiI6IjY2Njg5MzM3YzI5ZGNlYThjOTljMmIyYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xg5zdWykkFD03qzQh2qbFIKAWUFpnIQW63ht9cRR0yE",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -21,5 +20,4 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "spanish", name: "Spanish" },
 ];
 
-export const GROQ_API_KEY =
-  "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";
+export const GROQ_API_KEY = process.env.REACT_APP_GROQ_KEY;
