@@ -4,6 +4,7 @@ import VideoTitle from "./VideoTitle";
 import BackgroundVideoPlay from "./BackgroundVideoPlay";
 import ListOfTrailer from "./ListOfTrailer";
 import useNowPlayingMovieList from "../hooks/useNowPlayingMovieList";
+import Shimmer from "./Shimmer";
 
 const MainMovieContainer = () => {
   useNowPlayingMovieList();

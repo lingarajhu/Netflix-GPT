@@ -8,6 +8,7 @@ import { USER_LOGO } from "../utils/constants";
 import { openSearchComponent } from "../utils/gptSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { changeLanguage } from "../utils/configSlice";
+import { addGptMovies } from "../utils/gptSlice";
 
 const Header = (props) => {
   const user = useSelector((store) => store.user);
@@ -35,6 +36,9 @@ const Header = (props) => {
 
   const handleSearchBtn = () => {
     dispatch(openSearchComponent(!gptSearchButton));
+    if (gptSearchButton) {
+      dispatch(addGptMovies([]));
+    }
   };
 
   const handleClick = () => {
@@ -97,7 +101,7 @@ const Header = (props) => {
               {showSignOut ? "🔻" : "🔺"}
             </span>
             {!showSignOut && (
-              <div className="bg-gray-600 origin-top duration-200 bg-opacity-60 flex flex-col p-2 absolute left-4 top-8 w-24 text-center rounded-md">
+              <div className="bg-black/60 origin-top duration-200 bg-opacity-60 flex flex-col p-2 absolute left-32 top-10 text-right rounded-md">
                 <span className="font-bold hover:shadow-xl duration-200 text-base text-white">
                   {user.displayName}
                 </span>

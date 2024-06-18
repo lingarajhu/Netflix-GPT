@@ -35,6 +35,14 @@
 - Created the GPT search page
 - Created search bar and search section in gpt search page
 - Created multi-language feature in our app
+- Integrated the GPT feature into the app
+- Used groq which an amazing Fastest LPU[language processing unit] inferencing engine which gives the quick responces much more faster than other LLM's, 300 tokens per second.
+- Created new component as gptComponent added the search feature in it for movie results.
+- Fetched the movie data for the movies recomended form GPT using TMDB search API.
+- Created the new Slice called GPTSlice for storing the GPT data with the help of redux store.
+- By creating the another component displayed the recomeded movies.
+- Implemented the modular coding.
+- Reused the MovieList component for displaying the movie data. Reusability of the component.
 
 # Features
 

@@ -1,15 +1,16 @@
 const lang = {
   en: {
     search: "Search",
-    gptSearchPlaceholder: "what's on your mind today?",
+    gptSearchPlaceholder: "Tip: Top rated IMDB horror movies 2024",
   },
   hindi: {
     search: "खोज",
-    gptSearchPlaceholder: "आज आपके मन में क्या है?",
+    gptSearchPlaceholder: "टिप: टॉप रेटेड IMDB हॉरर फिल्में 2024",
   },
   spanish: {
     search: "Buscar",
-    gptSearchPlaceholder: "¿Qué tienes en mente hoy?",
+    gptSearchPlaceholder:
+      "Consejo: películas de terror IMDB mejor valoradas 2024",
   },
 };
 

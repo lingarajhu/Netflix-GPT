@@ -31,6 +31,8 @@ const MovieCard = ({ poster_path, title, imdbRating, currentMovie }) => {
     dispatch(setIsWatchList(true));
   };
 
+  if (!poster_path) return;
+
   return (
     <div
       onMouseLeave={handleLeave}
