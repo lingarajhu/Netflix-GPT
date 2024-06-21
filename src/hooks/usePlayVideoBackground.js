@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { options } from "../utils/constants";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setTrailerId } from "../utils/movieSlice";
 
 const usePlayVideoBackground = (movieId) => {

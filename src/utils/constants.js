@@ -1,3 +1,23 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSquareXTwitter,
+  faSquareFacebook,
+  faSquareInstagram,
+  faSquareSnapchat,
+} from "@fortawesome/free-brands-svg-icons";
+
+const twitterIcon = <FontAwesomeIcon icon={faSquareXTwitter} />;
+const faceBook = <FontAwesomeIcon icon={faSquareFacebook} />;
+const insta = <FontAwesomeIcon icon={faSquareInstagram} />;
+const snapChat = <FontAwesomeIcon icon={faSquareSnapchat} />;
+
+export const media = [
+  { icon: twitterIcon, link: "https://x.com" },
+  { icon: faceBook, link: "https://facebook.com" },
+  { icon: insta, link: "https://instagram.com" },
+  { icon: snapChat, link: "https://snapchat.com" },
+];
+
 export const NETFLIX_IMG =
   "https://assets.nflxext.com/ffe/siteui/vlv3/dd4dfce3-1a39-4b1a-8e19-b7242da17e68/86742114-c001-4800-a127-c9c89ca7bbe4/IN-en-20240527-popsignuptwoweeks-perspective_alpha_website_medium.jpg";
 

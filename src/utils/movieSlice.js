@@ -14,7 +14,7 @@ const movieSlice = createSlice({
     upComing: null,
     tvShows: null,
     topRatedShows: null,
-    watchList: null,
+    watchList: [],
   },
   reducers: {
     nowFeaturingMovie: (state, action) => {

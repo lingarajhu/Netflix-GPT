@@ -24,6 +24,7 @@ const MovieCard = ({ poster_path, title, imdbRating, currentMovie }) => {
   };
 
   const handleClick = () => {
+    console.log(currentMovie);
     setWatchList(true);
     if (!checkWatchList.includes(currentMovie)) {
       dispatch(addWatchList(currentMovie));
