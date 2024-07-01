@@ -21,7 +21,6 @@ const GptSearch = () => {
       options
     );
     const json = await movieData.json();
-    console.log(json.results);
     return json.results;
   };
 
