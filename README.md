@@ -87,6 +87,11 @@ A modern, feature-rich streaming platform frontend built with React.js and enhan
 ## GPT-Search results list
 ![Screenshot (78)](https://github.com/lingarajhu/Netflix-GPT/assets/159787794/70fb2a29-6674-4853-a41b-024fee21f796)
 
+__Befor you click on this Demo link i would highly suggest you to connect your PC to some VPN other wise app will not fetch the data because of Banning the TMDB(Data providing) application in India other than India it will run perfectly fine__
+__Connet your PC to VPN then click this Demo link__
+
+## Currently app is running at localhost: [here](http://localhost:3001/)
+
 ## Implementation.
 
 - Create React App
