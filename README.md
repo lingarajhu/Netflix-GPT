@@ -89,7 +89,7 @@ A modern, feature-rich streaming platform frontend built with React.js and enhan
 
 __Befor you click on this Demo link i would highly suggest you to connect your PC to some VPN other wise app will not fetch the data because of Banning the TMDB(Data providing) application in India other than India it will run perfectly fine__
 
-###Connet your PC to VPN then click this Demo link
+### Connet your PC to VPN then click this Demo link
 
 ## Currently app is running at localhost: [here](http://localhost:3001/)
 
